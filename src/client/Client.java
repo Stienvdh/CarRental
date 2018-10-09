@@ -107,7 +107,7 @@ public class Client extends AbstractTestBooking {
 		List<Reservation> result = new ArrayList<Reservation>();
 		for (Car car : this.crc.getAllCars()) {
 			for (Reservation reservation : car.getReservations()) {
-				if (reservation.getCarRenter() == clientName) {
+				if (reservation.getCarRenter().equals(clientName)) {
 					result.add(reservation);
 				}
 			}
@@ -129,7 +129,7 @@ public class Client extends AbstractTestBooking {
 	protected int getNumberOfReservationsForCarType(String carType) throws Exception {
 		int result = 0;
 		for (Car car : this.crc.getAllCars()) {
-			if (car.getType().equals(carType)) {result += car.getReservations().size();}
+			if (car.getType().getName().equals(carType)) {result += car.getReservations().size();}
 		}
 		return result;
 	}
