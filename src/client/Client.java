@@ -18,7 +18,7 @@ public class Client extends AbstractTestBooking {
 		
 		String carRentalCompanyName = "Hertz";
 		
-		System.setSecurityManager(null);		
+		System.setSecurityManager(null);
 		
 		// An example reservation scenario on car rental company 'Hertz' would be...
 		Client client = new Client("simpleTrips", carRentalCompanyName);
@@ -49,9 +49,7 @@ public class Client extends AbstractTestBooking {
 	@Override
 	protected void checkForAvailableCarTypes(Date start, Date end) throws Exception {
 		Set<CarType> cartypes = this.crc.getAvailableCarTypes(start, end);
-		for (CarType type : cartypes) {
-			System.out.println(type.toString());
-		}
+		for (CarType type : cartypes) {System.out.println(type.toString());}
 	}
 
 	/**
@@ -131,10 +129,7 @@ public class Client extends AbstractTestBooking {
 	protected int getNumberOfReservationsForCarType(String carType) throws Exception {
 		int result = 0;
 		for (Car car : this.crc.getAllCars()) {
-			if (car.getType().equals(carType)) {
-				result += car.getReservations().size();
-				
-			}
+			if (car.getType().equals(carType)) {result += car.getReservations().size();}
 		}
 		return result;
 	}
