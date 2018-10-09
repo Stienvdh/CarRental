@@ -116,6 +116,10 @@ public class CarRentalCompany implements ICarRentalCompany {
 		}
 		return availableCars;
 	}
+	
+	public List<Car> getAllCars() {
+		return cars;
+	}
 
 	/****************
 	 * RESERVATIONS *
